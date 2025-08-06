@@ -190,11 +190,11 @@ function App() {
                     <div className="text-sm text-gray-600">Anos de Experiência</div>
                   </div>
                   <div className="text-center">
-                    <div className="flex items-center justify-center space-x-1">
+                    {/* <div className="flex items-center justify-center space-x-1">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-5 h-5 fill-orange-400 text-orange-400" />
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
               </motion.div>
@@ -373,40 +373,145 @@ function App() {
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                "Modern bedroom with built-in wooden wardrobe and elegant design",
-                "Contemporary living room with custom wooden furniture and shelving",
-                "Luxury kitchen with wooden cabinets and marble countertops",
-                "Home office with custom wooden desk and storage solutions",
-                "Walk-in closet with organized wooden storage systems",
-                "Modern bathroom vanity with wooden cabinets and mirror"
-              ].map((description, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="group cursor-pointer"
-                  onClick={handleContact}
-                >
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
-                    <img  
-                      alt={`Projeto ${index + 1} - ${description}`}
-                      className="w-full h-80 object-cover"
-                     src="src/assets/projeto-1.jpg" />
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0 * 0.1 }}
+    whileHover={{ scale: 1.05 }}
+    className="group cursor-pointer"
+    onClick={handleContact}
+  >
+    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+      <img  
+        alt="Projeto 1 - Modern bedroom with built-in wooden wardrobe and elegant design"
+        className="w-full h-80 object-cover"
+        src="src/assets/projeto-1.JPG" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <h3 className="text-lg font-semibold mb-2">Projeto 1</h3>
+        <p className="text-sm text-gray-200">Ambiente sofisticado com adega embutida e iluminação acolhedora.</p>
+      </div>
+    </div>
+  </motion.div>
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-lg font-semibold mb-2">Projeto {index + 1}</h3>
-                      <p className="text-sm text-gray-200">Breve descrição</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 1 * 0.1 }}
+    whileHover={{ scale: 1.05 }}
+    className="group cursor-pointer"
+    onClick={handleContact}
+  >
+    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+      <img  
+        alt="Projeto 2 - Contemporary living room with custom wooden furniture and shelving"
+        className="w-full h-80 object-cover"
+        src="src/assets/projeto-2.JPG" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <h3 className="text-lg font-semibold mb-2">Projeto 2</h3>
+        <p className="text-sm text-gray-200">Home office moderno com nichos funcionais e decoração minimalista.</p>
+      </div>
+    </div>
+  </motion.div>
+
+  {/* Repita para os projetos 3 a 6, mudando: delay, alt, número do projeto e descrição */}
+
+  {/* Projeto 3 */}
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 2 * 0.1 }}
+    whileHover={{ scale: 1.05 }}
+    className="group cursor-pointer"
+    onClick={handleContact}
+  >
+    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+      <img  
+        alt="Projeto 3 - Luxury kitchen with wooden cabinets and marble countertops"
+        className="w-full h-80 object-cover"
+        src="src/assets/projeto-3.JPG" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <h3 className="text-lg font-semibold mb-2">Projeto 3</h3>
+        <p className="text-sm text-gray-200">Cozinha com ilha e prateleiras iluminadas, perfeita para receber.</p>
+      </div>
+    </div>
+  </motion.div>
+
+  {/* Projeto 4 */}
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 3 * 0.1 }}
+    whileHover={{ scale: 1.05 }}
+    className="group cursor-pointer"
+    onClick={handleContact}
+  >
+    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+      <img  
+        alt="Projeto 4 - Home office with custom wooden desk and storage solutions"
+        className="w-full h-80 object-cover"
+        src="src/assets/projeto-4.JPG" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <h3 className="text-lg font-semibold mb-2">Projeto 4</h3>
+        <p className="text-sm text-gray-200">Cozinha contemporânea com armários em acabamento brilhante.</p>
+      </div>
+    </div>
+  </motion.div>
+
+  {/* Projeto 5 */}
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 4 * 0.1 }}
+    whileHover={{ scale: 1.05 }}
+    className="group cursor-pointer"
+    onClick={handleContact}
+  >
+    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+      <img  
+        alt="Projeto 5 - Walk-in closet with organized wooden storage systems"
+        className="w-full h-80 object-cover"
+        src="src/assets/projeto-5.JPG" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <h3 className="text-lg font-semibold mb-2">Projeto 5</h3>
+        <p className="text-sm text-gray-200">Sala de reunião clean com divisórias de vidro e mobiliário sob medida.</p>
+      </div>
+    </div>
+  </motion.div>
+
+  {/* Projeto 6 */}
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 5 * 0.1 }}
+    whileHover={{ scale: 1.05 }}
+    className="group cursor-pointer"
+    onClick={handleContact}
+  >
+    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+      <img  
+        alt="Projeto 6 - Modern bathroom vanity with wooden cabinets and mirror"
+        className="w-full h-80 object-cover"
+        src="src/assets/projeto-6.JPG" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <h3 className="text-lg font-semibold mb-2">Projeto 6</h3>
+        <p className="text-sm text-gray-200">Closet planejado com iluminação embutida e amplo espaço de armazenamento.</p>
+      </div>
+    </div>
+  </motion.div>
+</div>
+
 
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
