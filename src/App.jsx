@@ -563,7 +563,7 @@ function App() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-800 group-hover:text-orange-700 transition-colors">Telefone</h3>
-                      <p className="text-gray-600">(11) 99999-9999</p>
+                      <p className="text-gray-600">(87) 98839-4859</p>
                     </div>
                   </div>
 
@@ -642,7 +642,7 @@ function App() {
                       <input 
                         type="tel" 
                         className="w-full px-4 py-3 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all duration-300 bg-white"
-                        placeholder="(11) 99999-9999"
+                        placeholder="(87) 98839-4859"
                       />
                     </div>
                   </div>
@@ -726,7 +726,7 @@ function App() {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contato</h3>
                 <ul className="space-y-2 text-gray-400">
-                  <li>(87) 99999-9999</li>
+                  <li>(87) 98839-4859</li>
                   <li>contato@emadeirando.com.br</li>
                   <li>Rua das Madeiras, 123<br />Petrolina, PE</li>
                 </ul>
