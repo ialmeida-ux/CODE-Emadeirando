@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/toaster';
 import { useToast } from '@/components/ui/use-toast';
+import Video from '@/components/ui/video';
 import { 
   Home, 
   Sofa, 
@@ -27,6 +27,13 @@ import {
 
 function App() {
   const { toast } = useToast();
+  const handleInstagramClick = () => {
+    window.open('https://www.instagram.com/emadeirando.decor/', '_blank');
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/5587988394859', '_blank');
+  };
 
   const handleContact = () => {
     // toast({
@@ -105,7 +112,7 @@ function App() {
                 <a href="#galeria" className="text-gray-700 hover:text-orange-400 transition-colors font-medium">Galeria</a>
                 <a href="#contato" className="text-gray-700 hover:text-orange-400 transition-colors font-medium">Contato</a>
                 <Button 
-                  onClick={handleContact}
+                  onClick={handleWhatsAppClick}
                   className="bg-gradient-to-r from-orange-400 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Orçamento Grátis
@@ -116,7 +123,7 @@ function App() {
         </header>
 
         {/* Hero Section */}
-        <section id="inicio" className="relative py-20 overflow-hidden">
+        <section id="inicio" className="relative pb-20 pt-20 overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -157,7 +164,9 @@ function App() {
                   className="flex flex-col sm:flex-row gap-4"
                 >
                   <Button 
-                    onClick={handleContact}
+                    onClick={() => {
+                      document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     size="lg"
                     className="bg-gradient-to-r from-orange-400 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 group"
                   >
@@ -166,7 +175,9 @@ function App() {
                   </Button>
                   
                   <Button 
-                    onClick={handleContact}
+                    onClick={() => {
+                      document.getElementById('galeria')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     variant="outline"
                     size="lg"
                     className="border-2 border-orange-400 text-orange-700 hover:bg-orange-50 px-8 py-4 rounded-full transition-all duration-300"
@@ -206,14 +217,13 @@ function App() {
                 className="relative"
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <img  
-                    alt="Cozinha planejada moderna com móveis de madeira"
-                    className="w-full h-[600px] object-cover"
-                   src="src/assets/hero.png" />
+                  <div className="w-full h-full">
+                    <Video />
+                  </div>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   
-                  <motion.div 
+                  {/* <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1 }}
@@ -230,7 +240,7 @@ function App() {
                         </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </motion.div> */}
                 </div>
 
                 {/* Floating Elements */}
@@ -250,9 +260,76 @@ function App() {
           </div>
         </section>
 
+        {/*About Us Section */}
+        <section id="sobre" className="py-20 bg-gray-50">
+          <div className="container w-[60%] mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-orange-700 to-orange-700 bg-clip-text text-transparent">
+                  Sobre nós
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-6xl mx-auto">
+                Na Emadeirando, unimos paixão por marcenaria e atenção aos detalhes para criar móveis personalizados que refletem o estilo e a necessidade de cada cliente. Franklin e Vivian, fundadores da marca, acreditam que cada peça deve contar uma história, a sua! Da escolha da madeira ao acabamento final, tudo é feito com dedicação, qualidade e cuidado.
+              </p>
+            </motion.div>
+            <div className="grid lg:grid-cols-1 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="relative"
+              >
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <img  
+                    alt="Cozinha planejada moderna com móveis de madeira"
+                    className="w-full h-[700px] object-cover object-top"
+                    src="src/assets/about-img.jpg" />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1 }}
+                    className="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-6"
+                  >
+                    <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+                      <div className="flex items-center space-x-4">
+                        
+                        <div>
+                          <div className="font-semibold text-gray-800">Vivian</div>
+                          <div className="text-sm text-gray-600">Design e funcionalidade sob medida para o seu lar. Aqui, o móvel é feito para você.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white/50 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <div className="font-semibold text-gray-800">Franklin</div>
+                          <div className="text-sm text-gray-600">Transformo madeira em experiências únicas. Cada detalhe importa na Emadeirando.</div>
+                        </div>
+                        
+                        
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+
+              
+            </div>
+          </div>
+        </section>
+
         {/* Services Section */}
         <section id="servicos" className="py-20 bg-white">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-6 mt-10">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -362,8 +439,8 @@ function App() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-orange-700 to-orange-700 bg-clip-text text-transparent">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 pt-10">
+                <span  className="bg-gradient-to-r from-orange-700 to-orange-700 bg-clip-text text-transparent">
                   Projetos de sucesso
                 </span>
               </h2>
@@ -520,7 +597,7 @@ function App() {
               className="text-center mt-12"
             >
               <Button 
-                onClick={handleContact}
+                onClick={handleInstagramClick}
                 size="lg"
                 className="bg-gradient-to-r from-orange-400 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
               >
@@ -539,7 +616,7 @@ function App() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 mt-10">
                 <span className="bg-gradient-to-r from-orange-700 to-orange-700 bg-clip-text text-transparent">
                   Entre em Contato
                 </span>
@@ -573,7 +650,7 @@ function App() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-800 group-hover:text-orange-700 transition-colors">E-mail</h3>
-                      <p className="text-gray-600">contato@emadeirando.com.br</p>
+                      <p className="text-gray-600">emadeirandodecor@gmail.com</p>
                     </div>
                   </div>
 
@@ -583,7 +660,8 @@ function App() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-800 group-hover:text-orange-700 transition-colors">Endereço</h3>
-                      <p className="text-gray-600">Rua das Madeiras, 123 - São Paulo, SP</p>
+                      <p className="text-gray-600">Rua Rio negro 10A, José e Maria</p> 
+                      <p className="text-gray-600">Petrolina/PE Cep: 56320380</p>
                     </div>
                   </div>
                 </div>
@@ -592,7 +670,7 @@ function App() {
                   <h3 className="text-xl font-semibold text-gray-800 mb-4">Siga-nos nas Redes Sociais</h3>
                   <div className="flex space-x-4">
                     <Button 
-                      onClick={handleContact}
+                      onClick={handleInstagramClick}
                       variant="outline" 
                       size="icon"
                       className="w-12 h-12 rounded-full border-orange-300 text-orange-400 hover:bg-orange-50 hover:border-orange-400 transition-all duration-300"
@@ -600,15 +678,7 @@ function App() {
                       <Instagram className="w-5 h-5" />
                     </Button>
                     <Button 
-                      onClick={handleContact}
-                      variant="outline" 
-                      size="icon"
-                      className="w-12 h-12 rounded-full border-orange-300 text-orange-400 hover:bg-orange-50 hover:border-orange-400 transition-all duration-300"
-                    >
-                      <Facebook className="w-5 h-5" />
-                    </Button>
-                    <Button 
-                      onClick={handleContact}
+                      onClick={handleWhatsAppClick}
                       variant="outline" 
                       size="icon"
                       className="w-12 h-12 rounded-full border-orange-300 text-orange-400 hover:bg-orange-50 hover:border-orange-400 transition-all duration-300"
@@ -706,10 +776,18 @@ function App() {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Serviços</h3>
                 <ul className="space-y-2 text-gray-400">
-                  <li><a href="#" onClick={handleContact} className="hover:text-orange-400 transition-colors">Cozinhas Planejadas</a></li>
-                  <li><a href="#" onClick={handleContact} className="hover:text-orange-400 transition-colors">Dormitórios</a></li>
-                  <li><a href="#" onClick={handleContact} className="hover:text-orange-400 transition-colors">Salas de Estar</a></li>
-                  <li><a href="#" onClick={handleContact} className="hover:text-orange-400 transition-colors">Home Office</a></li>
+                  <li><a href="#" onClick={() => {
+                      document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' });
+                    }} className="hover:text-orange-400 transition-colors">Cozinhas Planejadas</a></li>
+                  <li><a href="#" onClick={() => {
+                      document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' });
+                    }} className="hover:text-orange-400 transition-colors">Dormitórios</a></li>
+                  <li><a href="#" onClick={() => {
+                      document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' });
+                    }} className="hover:text-orange-400 transition-colors">Salas de Estar</a></li>
+                  <li><a href="#" onClick={() => {
+                      document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' });
+                    }} className="hover:text-orange-400 transition-colors">Home Office</a></li>
                 </ul>
               </div>
 
@@ -718,8 +796,9 @@ function App() {
                 <ul className="space-y-2 text-gray-400">
                   <li><a href="#" onClick={handleContact} className="hover:text-orange-400 transition-colors">Sobre Nós</a></li>
                   <li><a href="#" onClick={handleContact} className="hover:text-orange-400 transition-colors">Destaques</a></li>
-                  <li><a href="#" onClick={handleContact} className="hover:text-orange-400 transition-colors">Depoimentos</a></li>
-                  <li><a href="#" onClick={handleContact} className="hover:text-orange-400 transition-colors">Contato</a></li>
+                  <li><a href="#" onClick={() => {
+                      document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+                    }} className="hover:text-orange-400 transition-colors">Contato</a></li>
                 </ul>
               </div>
 
@@ -727,8 +806,8 @@ function App() {
                 <h3 className="text-lg font-semibold mb-4">Contato</h3>
                 <ul className="space-y-2 text-gray-400">
                   <li>(87) 98839-4859</li>
-                  <li>contato@emadeirando.com.br</li>
-                  <li>Rua das Madeiras, 123<br />Petrolina, PE</li>
+                  <li>emadeirandodecor@gmail.com</li>
+                  <li>Rua Rio negro 10A, José e Maria - Petrolina/PE Cep: 56320380</li>
                 </ul>
               </div>
             </div>
