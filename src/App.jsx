@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/toaster';
 import { useToast } from '@/components/ui/use-toast';
 import Video from '@/components/ui/video';
+import { useState } from "react";
 import { 
   Home, 
   Sofa, 
@@ -33,7 +34,11 @@ function App() {
 
   const handleWhatsAppClick = () => {
     window.open('https://wa.me/5587988394859', '_blank');
-  };
+  }
+
+  const [nome, setNome] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [mensagem, setMensagem] = useState('');
 
   const handleContact = () => {
     // toast({
@@ -41,6 +46,24 @@ function App() {
     // });
   };
 
+  const handleContactForms = () => {
+    const texto = `Olá! Quero um orçamento para projeto de móveis planejados.`;
+    const phone = '5587988394859'; // Seu número com DDD
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(texto.trim())}`;
+
+    window.open(url);
+
+  // const texto = 
+  //   `Olá! Gostaria de solicitar um orçamento.
+  //   Nome: ${nome}
+  //   Telefone: ${telefone}
+  //   Mensagem: ${mensagem}`;
+                    
+  //   const phone = '5587988394859'; // Seu número com DDD
+  //   const url = `https://wa.me/${phone}?text=${encodeURIComponent(texto.trim())}`;
+  //   window.open(url, '_blank');
+  };
+                
   const services = [
     {
       icon: <Sofa className="w-8 h-8" />,
@@ -262,7 +285,7 @@ function App() {
 
         {/*About Us Section */}
         <section id="sobre" className="py-20 bg-gray-50">
-          <div className="container w-[60%] mx-auto px-6">
+          <div className="w-full sm:w-[60%] mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -288,7 +311,7 @@ function App() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img  
                     alt="Cozinha planejada moderna com móveis de madeira"
-                    className="w-full h-[700px] object-cover object-top"
+                    className="w-full h-[500px] md:w-full md:h-[700px] object-cover object-top"
                     src="src/assets/about-img.jpg" />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -296,18 +319,18 @@ function App() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1 }}
-                    className="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-6"
+                    className="absolute bottom-6 left-6 right-6 grid grid-cols-1 gap-6 lg:grid-cols-2"
                   >
-                    <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+                    <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-xl min-w-[200px]">
                       <div className="flex items-center space-x-4">
-                        
+            
                         <div>
                           <div className="font-semibold text-gray-800">Vivian</div>
                           <div className="text-sm text-gray-600">Design e funcionalidade sob medida para o seu lar. Aqui, o móvel é feito para você.</div>
                         </div>
                       </div>
                     </div>
-                    <div className="bg-white/50 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+                    <div className="bg-white/50 backdrop-blur-md rounded-2xl p-6 shadow-xl min-w-[200px]">
                       <div className="flex items-center space-x-4">
                         <div>
                           <div className="font-semibold text-gray-800">Franklin</div>
@@ -371,7 +394,7 @@ function App() {
                     </p>
                     
                     <Button 
-                      onClick={handleContact}
+                      onClick={handleContactForms}
                       variant="ghost" 
                       className="mt-6 text-orange-400 hover:text-orange-700 hover:bg-orange-50 p-0 h-auto font-semibold group-hover:translate-x-2 transition-transform duration-300"
                     >
@@ -697,12 +720,14 @@ function App() {
               >
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Solicite seu Orçamento</h3>
                 
-                <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); handleContact(); }}>
+                <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); handleContactForms(); }}>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Nome</label>
                       <input 
                         type="text" 
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all duration-300 bg-white"
                         placeholder="Seu nome completo"
                       />
@@ -710,22 +735,24 @@ function App() {
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
                       <input 
-                        type="tel" 
+                        type="tel"
+                        value={telefone}
+                        onChange={(e) => setTelefone(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all duration-300 bg-white"
                         placeholder="(87) 98839-4859"
                       />
                     </div>
                   </div>
                   
-                  <div>
+                  {/* <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
                     <input 
                       type="email" 
                       className="w-full px-4 py-3 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all duration-300 bg-white"
                       placeholder="seu@email.com"
                     />
-                  </div>
-                  
+                  </div> */}
+{/*                   
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Tipo de Projeto</label>
                     <select className="w-full px-4 py-3 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all duration-300 bg-white">
@@ -737,11 +764,13 @@ function App() {
                       <option>Banheiro</option>
                       <option>Casa Completa</option>
                     </select>
-                  </div>
+                  </div> */}
                   
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
-                    <textarea 
+                    <textarea
+                      value={mensagem}
+                      onChange={(e) => setMensagem(e.target.value)} 
                       rows={4}
                       className="w-full px-4 py-3 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all duration-300 bg-white resize-none"
                       placeholder="Conte-nos mais sobre seu projeto..."
@@ -813,7 +842,7 @@ function App() {
             </div>
 
             <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 Agência 2GS. Todos os direitos reservados.</p>
+              <p>&copy; 2025 <a className='hover:text-orange-400 transition-colors' href="https://agencia2gs.com/">Agência 2GS</a>. Todos os direitos reservados.</p>
             </div>
           </div>
         </footer>
