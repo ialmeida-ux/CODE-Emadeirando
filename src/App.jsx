@@ -122,7 +122,7 @@ function App() {
                 animate={{ opacity: 1, x: 0 }}
                 className="flex items-center space-x-3"
               >
-                <img src="src/assets/logo-cinza.png" alt="Emadeirando Logo" width={150} />
+                <img src="src/assets/logocinza.png" alt="Emadeirando Logo" width={150} />
               </motion.div>
 
               <motion.div 
@@ -312,7 +312,7 @@ function App() {
                   <img  
                     alt="Cozinha planejada moderna com móveis de madeira"
                     className="w-full h-[500px] md:w-full md:h-[700px] object-cover object-top"
-                    src="src/assets/about-img.jpg" />
+                    src="src/assets/aboutimg.jpg" />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   <motion.div 
@@ -486,7 +486,7 @@ function App() {
       <img  
         alt="Projeto 1 - Modern bedroom with built-in wooden wardrobe and elegant design"
         className="w-full h-80 object-cover"
-        src="src/assets/projeto-1.JPG" />
+        src="src/assets/projeto1.JPG" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <h3 className="text-lg font-semibold mb-2">Projeto 1</h3>
@@ -508,7 +508,7 @@ function App() {
       <img  
         alt="Projeto 2 - Contemporary living room with custom wooden furniture and shelving"
         className="w-full h-80 object-cover"
-        src="src/assets/projeto-2.JPG" />
+        src="src/assets/projeto2.JPG" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <h3 className="text-lg font-semibold mb-2">Projeto 2</h3>
@@ -533,7 +533,7 @@ function App() {
       <img  
         alt="Projeto 3 - Luxury kitchen with wooden cabinets and marble countertops"
         className="w-full h-80 object-cover"
-        src="src/assets/projeto-3.JPG" />
+        src="src/assets/projeto3.JPG" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <h3 className="text-lg font-semibold mb-2">Projeto 3</h3>
@@ -556,7 +556,7 @@ function App() {
       <img  
         alt="Projeto 4 - Home office with custom wooden desk and storage solutions"
         className="w-full h-80 object-cover"
-        src="src/assets/projeto-4.JPG" />
+        src="src/assets/projeto4.JPG" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <h3 className="text-lg font-semibold mb-2">Projeto 4</h3>
@@ -579,7 +579,7 @@ function App() {
       <img  
         alt="Projeto 5 - Walk-in closet with organized wooden storage systems"
         className="w-full h-80 object-cover"
-        src="src/assets/projeto-5.JPG" />
+        src="src/assets/projeto5.JPG" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <h3 className="text-lg font-semibold mb-2">Projeto 5</h3>
@@ -602,7 +602,7 @@ function App() {
       <img  
         alt="Projeto 6 - Modern bathroom vanity with wooden cabinets and mirror"
         className="w-full h-80 object-cover"
-        src="src/assets/projeto-6.JPG" />
+        src="src/assets/projeto6.JPG" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <h3 className="text-lg font-semibold mb-2">Projeto 6</h3>
@@ -795,7 +795,7 @@ function App() {
             <div className="grid md:grid-cols-4 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <img src="src/assets/logo-laranja.png" width={200} alt="" />
+                  <img src="src/assets/logolaranja.png" width={200} alt="" />
                 </div>
                 <p className="text-gray-400 leading-relaxed">
                   Transformando ambientes com móveis planejados de qualidade há mais de 15 anos.
