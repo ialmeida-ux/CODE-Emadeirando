@@ -63,7 +63,10 @@ function App() {
   };
 
   const handleContactForms = () => {
-    const texto = `Olá! Quero um orçamento para projeto de móveis planejados.`;
+    const texto = 
+        `Nome: ${nome}
+        Telefone: ${telefone}
+        Mensagem: ${mensagem}`;
     const phone = '5587988394859'; // Seu número com DDD
     const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(texto.trim())}`;
 
@@ -461,7 +464,7 @@ function App() {
                 transition={{ delay: 0 * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 className="group cursor-pointer"
-                onClick={handleContact}
+                onClick={handleInstagramClick}
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
                   <ImageComponent 
@@ -483,7 +486,7 @@ function App() {
                 transition={{ delay: 1 * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 className="group cursor-pointer"
-                onClick={handleContact}
+                onClick={handleInstagramClick}
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
                   <ImageComponent 
@@ -506,7 +509,7 @@ function App() {
                 transition={{ delay: 2 * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 className="group cursor-pointer"
-                onClick={handleContact}
+                onClick={handleInstagramClick}
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
                   <ImageComponent 
@@ -528,7 +531,7 @@ function App() {
                 transition={{ delay: 3 * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 className="group cursor-pointer"
-                onClick={handleContact}
+                onClick={handleInstagramClick}
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
                   <ImageComponent 
@@ -550,7 +553,7 @@ function App() {
                 transition={{ delay: 4 * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 className="group cursor-pointer"
-                onClick={handleContact}
+                onClick={handleInstagramClick}
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
                   <ImageComponent 
@@ -572,7 +575,7 @@ function App() {
                 transition={{ delay: 5 * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 className="group cursor-pointer"
-                onClick={handleContact}
+                onClick={handleInstagramClick}
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
                   <ImageComponent 
