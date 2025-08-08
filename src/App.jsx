@@ -25,6 +25,22 @@ import {
   Award,
   Clock
 } from 'lucide-react';
+import { 
+  logocinza,
+  aboutimg,
+  projeto1,
+  projeto2,
+  projeto3,
+  projeto4,
+  projeto5,
+  projeto6,
+  logolaranja 
+} from '@/assets';
+
+// Novo componente para renderizar as imagens de forma otimizada
+const ImageComponent = ({ src, alt, className }) => {
+  return <img src={src} alt={alt} className={className} />;
+};
 
 function App() {
   const { toast } = useToast();
@@ -52,16 +68,6 @@ function App() {
     const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(texto.trim())}`;
 
     window.open(url);
-
-  // const texto = 
-  //   `Olá! Gostaria de solicitar um orçamento.
-  //   Nome: ${nome}
-  //   Telefone: ${telefone}
-  //   Mensagem: ${mensagem}`;
-                    
-  //   const phone = '5587988394859'; // Seu número com DDD
-  //   const url = `https://wa.me/${phone}?text=${encodeURIComponent(texto.trim())}`;
-  //   window.open(url, '_blank');
   };
                 
   const services = [
@@ -107,7 +113,6 @@ function App() {
 
   return (
     <>
-    {/* teste para deploy  4*/}
       <Helmet>
         <title>Emadeirando - Móveis Planejados de Qualidade</title>
         <meta name="description" content="Transforme seus ambientes com móveis planejados exclusivos da Emadeirando. Qualidade, design e funcionalidade para sua casa dos sonhos." />
@@ -123,7 +128,7 @@ function App() {
                 animate={{ opacity: 1, x: 0 }}
                 className="flex items-center space-x-3"
               >
-                <img src="src/assets/logocinza.png" alt="Emadeirando Logo" width={150} />
+                <ImageComponent src={logocinza} alt="Emadeirando Logo" className="w-[150px]" />
               </motion.div>
 
               <motion.div 
@@ -246,25 +251,6 @@ function App() {
                   </div>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  
-                  {/* <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1 }}
-                    className="absolute bottom-6 left-6 right-6"
-                  >
-                    <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
-                          <CheckCircle className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <div className="font-semibold text-gray-800">Projetos de primeira linha</div>
-                          <div className="text-sm text-gray-600">Utilizamos as melhores ferramentas do mercado!</div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div> */}
                 </div>
 
                 {/* Floating Elements */}
@@ -310,10 +296,10 @@ function App() {
                 className="relative"
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <img  
+                  <ImageComponent 
                     alt="Cozinha planejada moderna com móveis de madeira"
                     className="w-full h-[500px] md:w-full md:h-[700px] object-cover object-top"
-                    src="src/assets/aboutimg.jpg" />
+                    src={aboutimg} />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   <motion.div 
@@ -324,7 +310,6 @@ function App() {
                   >
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-xl min-w-[200px]">
                       <div className="flex items-center space-x-4">
-            
                         <div>
                           <div className="font-semibold text-gray-800">Vivian</div>
                           <div className="text-sm text-gray-600">Design e funcionalidade sob medida para o seu lar. Aqui, o móvel é feito para você.</div>
@@ -337,16 +322,11 @@ function App() {
                           <div className="font-semibold text-gray-800">Franklin</div>
                           <div className="text-sm text-gray-600">Transformo madeira em experiências únicas. Cada detalhe importa na Emadeirando.</div>
                         </div>
-                        
-                        
                       </div>
                     </div>
                   </motion.div>
                 </div>
               </motion.div>
-
-
-              
             </div>
           </div>
         </section>
@@ -474,145 +454,139 @@ function App() {
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: 0 * 0.1 }}
-    whileHover={{ scale: 1.05 }}
-    className="group cursor-pointer"
-    onClick={handleContact}
-  >
-    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
-      <img  
-        alt="Projeto 1 - Modern bedroom with built-in wooden wardrobe and elegant design"
-        className="w-full h-80 object-cover"
-        src="src/assets/projeto1.JPG" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-lg font-semibold mb-2">Projeto 1</h3>
-        <p className="text-sm text-gray-200">Ambiente sofisticado com adega embutida e iluminação acolhedora.</p>
-      </div>
-    </div>
-  </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="group cursor-pointer"
+                onClick={handleContact}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                  <ImageComponent 
+                    alt="Projeto 1 - Modern bedroom with built-in wooden wardrobe and elegant design"
+                    className="w-full h-80 object-cover"
+                    src={projeto1} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-lg font-semibold mb-2">Projeto 1</h3>
+                    <p className="text-sm text-gray-200">Ambiente sofisticado com adega embutida e iluminação acolhedora.</p>
+                  </div>
+                </div>
+              </motion.div>
 
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: 1 * 0.1 }}
-    whileHover={{ scale: 1.05 }}
-    className="group cursor-pointer"
-    onClick={handleContact}
-  >
-    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
-      <img  
-        alt="Projeto 2 - Contemporary living room with custom wooden furniture and shelving"
-        className="w-full h-80 object-cover"
-        src="src/assets/projeto2.JPG" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-lg font-semibold mb-2">Projeto 2</h3>
-        <p className="text-sm text-gray-200">Home office moderno com nichos funcionais e decoração minimalista.</p>
-      </div>
-    </div>
-  </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1 * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="group cursor-pointer"
+                onClick={handleContact}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                  <ImageComponent 
+                    alt="Projeto 2 - Contemporary living room with custom wooden furniture and shelving"
+                    className="w-full h-80 object-cover"
+                    src={projeto2} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-lg font-semibold mb-2">Projeto 2</h3>
+                    <p className="text-sm text-gray-200">Home office moderno com nichos funcionais e decoração minimalista.</p>
+                  </div>
+                </div>
+              </motion.div>
 
-  {/* Repita para os projetos 3 a 6, mudando: delay, alt, número do projeto e descrição */}
+              {/* Repita para os projetos 3 a 6, mudando: delay, alt, número do projeto e descrição */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 2 * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="group cursor-pointer"
+                onClick={handleContact}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                  <ImageComponent 
+                    alt="Projeto 3 - Luxury kitchen with wooden cabinets and marble countertops"
+                    className="w-full h-80 object-cover"
+                    src={projeto3} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-lg font-semibold mb-2">Projeto 3</h3>
+                    <p className="text-sm text-gray-200">Cozinha com ilha e prateleiras iluminadas, perfeita para receber.</p>
+                  </div>
+                </div>
+              </motion.div>
 
-  {/* Projeto 3 */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: 2 * 0.1 }}
-    whileHover={{ scale: 1.05 }}
-    className="group cursor-pointer"
-    onClick={handleContact}
-  >
-    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
-      <img  
-        alt="Projeto 3 - Luxury kitchen with wooden cabinets and marble countertops"
-        className="w-full h-80 object-cover"
-        src="src/assets/projeto3.JPG" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-lg font-semibold mb-2">Projeto 3</h3>
-        <p className="text-sm text-gray-200">Cozinha com ilha e prateleiras iluminadas, perfeita para receber.</p>
-      </div>
-    </div>
-  </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 3 * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="group cursor-pointer"
+                onClick={handleContact}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                  <ImageComponent 
+                    alt="Projeto 4 - Home office with custom wooden desk and storage solutions"
+                    className="w-full h-80 object-cover"
+                    src={projeto4} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-lg font-semibold mb-2">Projeto 4</h3>
+                    <p className="text-sm text-gray-200">Cozinha contemporânea com armários em acabamento brilhante.</p>
+                  </div>
+                </div>
+              </motion.div>
 
-  {/* Projeto 4 */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: 3 * 0.1 }}
-    whileHover={{ scale: 1.05 }}
-    className="group cursor-pointer"
-    onClick={handleContact}
-  >
-    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
-      <img  
-        alt="Projeto 4 - Home office with custom wooden desk and storage solutions"
-        className="w-full h-80 object-cover"
-        src="src/assets/projeto4.JPG" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-lg font-semibold mb-2">Projeto 4</h3>
-        <p className="text-sm text-gray-200">Cozinha contemporânea com armários em acabamento brilhante.</p>
-      </div>
-    </div>
-  </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 4 * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="group cursor-pointer"
+                onClick={handleContact}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                  <ImageComponent 
+                    alt="Projeto 5 - Walk-in closet with organized wooden storage systems"
+                    className="w-full h-80 object-cover"
+                    src={projeto5} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-lg font-semibold mb-2">Projeto 5</h3>
+                    <p className="text-sm text-gray-200">Sala de reunião clean com divisórias de vidro e mobiliário sob medida.</p>
+                  </div>
+                </div>
+              </motion.div>
 
-  {/* Projeto 5 */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: 4 * 0.1 }}
-    whileHover={{ scale: 1.05 }}
-    className="group cursor-pointer"
-    onClick={handleContact}
-  >
-    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
-      <img  
-        alt="Projeto 5 - Walk-in closet with organized wooden storage systems"
-        className="w-full h-80 object-cover"
-        src="src/assets/projeto5.JPG" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-lg font-semibold mb-2">Projeto 5</h3>
-        <p className="text-sm text-gray-200">Sala de reunião clean com divisórias de vidro e mobiliário sob medida.</p>
-      </div>
-    </div>
-  </motion.div>
-
-  {/* Projeto 6 */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: 5 * 0.1 }}
-    whileHover={{ scale: 1.05 }}
-    className="group cursor-pointer"
-    onClick={handleContact}
-  >
-    <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
-      <img  
-        alt="Projeto 6 - Modern bathroom vanity with wooden cabinets and mirror"
-        className="w-full h-80 object-cover"
-        src="src/assets/projeto6.JPG" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-lg font-semibold mb-2">Projeto 6</h3>
-        <p className="text-sm text-gray-200">Closet planejado com iluminação embutida e amplo espaço de armazenamento.</p>
-      </div>
-    </div>
-  </motion.div>
-</div>
-
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 5 * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="group cursor-pointer"
+                onClick={handleContact}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                  <ImageComponent 
+                    alt="Projeto 6 - Modern bathroom vanity with wooden cabinets and mirror"
+                    className="w-full h-80 object-cover"
+                    src={projeto6} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-lg font-semibold mb-2">Projeto 6</h3>
+                    <p className="text-sm text-gray-200">Closet planejado com iluminação embutida e amplo espaço de armazenamento.</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -745,28 +719,6 @@ function App() {
                     </div>
                   </div>
                   
-                  {/* <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
-                    <input 
-                      type="email" 
-                      className="w-full px-4 py-3 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all duration-300 bg-white"
-                      placeholder="seu@email.com"
-                    />
-                  </div> */}
-{/*                   
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Tipo de Projeto</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-orange-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all duration-300 bg-white">
-                      <option>Selecione o tipo de projeto</option>
-                      <option>Cozinha</option>
-                      <option>Dormitório</option>
-                      <option>Sala de Estar</option>
-                      <option>Home Office</option>
-                      <option>Banheiro</option>
-                      <option>Casa Completa</option>
-                    </select>
-                  </div> */}
-                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
                     <textarea
@@ -796,7 +748,7 @@ function App() {
             <div className="grid md:grid-cols-4 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <img src="src/assets/logolaranja.png" width={200} alt="" />
+                  <ImageComponent src={logolaranja} className="w-[200px]" alt="Emadeirando Logo" />
                 </div>
                 <p className="text-gray-400 leading-relaxed">
                   Transformando ambientes com móveis planejados de qualidade há mais de 15 anos.
