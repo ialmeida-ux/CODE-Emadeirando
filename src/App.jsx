@@ -107,6 +107,7 @@ function App() {
 
   return (
     <>
+    {/* teste para deploy */}
       <Helmet>
         <title>Emadeirando - Móveis Planejados de Qualidade</title>
         <meta name="description" content="Transforme seus ambientes com móveis planejados exclusivos da Emadeirando. Qualidade, design e funcionalidade para sua casa dos sonhos." />
